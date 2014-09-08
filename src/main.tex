@@ -1,0 +1,108 @@
+\documentclass[
+    headinclude=false,
+    footinclude=false,
+    paper=A4,
+    paper=portrait,
+    pagesize
+]{scrartcl}
+
+% basics
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[ngerman]{babel}
+
+% geometrics
+\usepackage[margin=0cm]{geometry}
+\usepackage[onehalfspacing]{setspace}
+
+% fonts
+\usepackage{DejaVuSans}
+\renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+% color
+\usepackage[table]{xcolor}
+\usepackage{mdframed}
+\definecolor{hfugreen}{rgb}{0,0.75,0}
+
+%
+% Flexible parts
+%
+\newcommand{\referee}{Max Mustermann}
+\newcommand{\thema}{Warum Unfug so verdammt rockt}
+\newcommand{\desc}{
+    \begin{itemize}
+        \item Die Mitglieder des Unfug
+        \item Die Themen des Unfug
+        \item Das traditionelle Treffen nach dem Unfug in der Färbe
+    \end{itemize}
+}
+
+%
+% Actual document
+%
+\begin{document}
+    \mdfdefinestyle{mdunfuggreen}{
+        hidealllines=true,
+        backgroundcolor=hfugreen,
+        linecolor=hfugreen,
+        fontcolor=white
+    }
+    \mdfdefinestyle{mdunfugblank}{
+        hidealllines=true,
+        backgroundcolor=white,
+        linecolor=black,
+        fontcolor=black
+    }
+    \thispagestyle{empty}
+
+    \begin{mdframed}[style=mdunfuggreen]
+        \begin{center}
+            \vspace{0.7cm}
+
+            {\fontsize{80}{96} \selectfont \textbf{Unfug}}
+
+            \begin{Huge}
+                \vspace{0.7cm}
+                Unix Friends and User Group
+                \vspace{0.7cm} \\
+                Immer Donnerstags um 19:00 Uhr in B1.32
+                \vspace{0.7cm}
+            \end{Huge}
+
+        \end{center}
+    \end{mdframed}
+
+    \begin{mdframed}[style=mdunfugblank]
+        \begin{center}
+            {\fontsize{40}{40} \selectfont \textbf{Diese Woche:}}
+
+            \begin{Huge}
+                \vspace{1cm}
+                \referee
+
+                \vspace{1cm}
+                über
+
+                \vspace{1cm}
+                {\fontsize{40}{40} \selectfont \textbf{\thema}}
+
+                \vspace{1cm}
+                \desc
+            \end{Huge}
+
+        \end{center}
+    \end{mdframed}
+
+    \vfill{}
+
+    \begin{mdframed}[style=mdunfugblank]
+        \begin{center}
+            \begin{huge}
+                Web: http://unfug.org \\
+                IRC: irc.ghb.hs-furtwangen.de \#unfug
+            \end{huge}
+        \end{center}
+    \end{mdframed}
+
+\end{document}
+
