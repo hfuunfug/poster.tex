@@ -2,19 +2,20 @@ SRC=./src
 
 LATEX=pdflatex
 
-SOURCES=$(SRC)/main.tex
+FILENAME=main
+
+SOURCES=$(SRC)/$(FILENAME).tex
 
 all:
 	$(LATEX) $(SOURCES)
 	$(LATEX) $(SOURCES)
 	$(LATEX) $(SOURCES)
 
-nearly_clean:
-	@rm -v $(shell find -name '*.(aux|log|nav|out|snm|toc|vrb)' -type f)
-	@echo "Clean."
-
 clean:
-	@rm -v $(shell find -name '*.(aux|log|nav|out|pdf|snm|toc|vrb)' -type f)
-	@echo "Clean."
+	@rm -vf $(FILENAME).aux $(FILENAME).log $(FILENAME).nav $(FILENAME).out $(FILENAME).snm $(FILENAME).toc $(FILENAME).vrb
+	@echo "Removed LaTeX buildfiles."
 
+mrproper: clean
+	@rm -vf $(FILENAME).pdf
+	@echo "Removed PDF."
 
