@@ -1,0 +1,64 @@
+% $Id: unfug.tex 2 2005-09-12 16:22:45Z pfeifer $
+% Copyright 2005
+% Distributed under the terms of the GNU General Public License v2
+\documentclass[10pt,%
+               landscape,%
+               a4paper
+]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage[latin1]{inputenc}
+\usepackage{ngerman}
+\usepackage{graphicx}
+
+\pagestyle{empty}
+
+\begin{document}
+
+% METAFONT Zeichensatz!
+\font\logo=lcmssb8 scaled 23000
+\font\themafont=lcmssb8 scaled 5000
+\font\deffont=lcmssb8 scaled 2500
+\font\authorfont=lcmssb8 scaled 3500
+\font\astafont=lcmssb8 scaled 1000
+
+\setlength{\unitlength}{1mm}
+
+\begin{picture}(0,0)
+
+
+	%% next paragraph: unfug logo and header
+  \put(-50,25){\deffont Unix Friends and User Group}
+  \put(-50,13){\deffont http://www.unfug.org -- news://fhf.org.unfug}
+	\put(-85,-40){{\logo UnFUG}}
+	\put(160,25){\includegraphics[scale=2.5]{images/logo}}
+  \put(160,20){\astafont Wintersemester 06/07}
+
+	%% Datum und Oertlichkeit von UnFUG
+  \put(-50,-60){\deffont Donnerstag 18-01-2007, 19:00 Uhr -- B1.32}
+
+	%% Titel
+  \put(-50,-80){\themafont Pimp My *nix}
+
+%  \put(-50,-100){\authorfont verschiedene Referenten}
+	%% subtitles
+	%% down here we can move entries left, right, up and down
+	%% all upper entries _are_ the unfug logo (cooperate design! ;-)
+  \put(-50,-105){\deffont -- MMX, SSE, Caches und Optimierungen;}
+  \put(-50,-115){\deffont -- ArchLinux; nuetzliche Debian-Tools;}
+  \put(-50,-125){\deffont -- rlwrap; git; Unison;}
+  \put(-50,-135){\deffont -- LUKS; \ldots}
+%  \put(-50,-150){\deffont -- }
+
+\end{picture}
+\end{document}
+
+HELPDESK:
+
+ - zum Unterstreichen von Textpassagen ist folgendes Makro zu
+   bevorzugen: \underline (z.B. \underline{23-03-2005, 19:00 Uhr})
+
+ - lcmssb8 ist strikt 7bit clean -> keine Implementierung von Krautlauten
+   man metafont ;-)
+
+% vim:set ts=2 noet tw=120 ft=tex:
