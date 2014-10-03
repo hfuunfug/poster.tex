@@ -1,3 +1,3 @@
-# poster_template.tex
+# poster template
 
-Template for the Unfug poster at Hochschule Furtwangen University.
+Template for the UnFUG poster at Hochschule Furtwangen University.
