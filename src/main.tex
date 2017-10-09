@@ -1,7 +1,7 @@
 \documentclass[
     headinclude=false,
     footinclude=false,
-    paper=A4,
+    paper=A3,
     paper=portrait,
     pagesize
 ]{scrartcl}
@@ -14,29 +14,21 @@
 % geometrics
 \usepackage[margin=0cm]{geometry}
 \usepackage[onehalfspacing]{setspace}
+\usepackage[table]{xcolor}
+\usepackage{array}
 
 % fonts
 \usepackage{DejaVuSans}
 \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
+
+\newcommand{\talk}[3]{#1 & #3 & #2 \\}
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 % color
 \usepackage[table]{xcolor}
 \usepackage{mdframed}
 \definecolor{hfugreen}{rgb}{0,0.75,0}
 
-%
-% Flexible parts
-%
-\newcommand{\talkDate}{07.01.2016}
-\newcommand{\referee}{Max Mustermann}
-\newcommand{\thema}{Warum UnFUG so verdammt rockt}
-\newcommand{\desc}{
-    \begin{itemize}
-        \item Die Mitglieder des UnFUG
-        \item Die Themen des UnFUG
-        \item Das traditionelle Treffen nach dem UnFUG in der Färbe
-    \end{itemize}
-}
 
 %
 % Actual document
@@ -75,22 +67,35 @@
 
     \begin{mdframed}[style=mdunfugblank]
         \begin{center}
-            {\fontsize{40}{40} \selectfont \textbf{Am \talkDate{}:}}
+            {\fontsize{40}{40} \selectfont \textbf{Timeline}}
+
+            \vspace{1cm}
 
             \begin{Huge}
-                \vspace{1cm}
-                \referee
+                \rowcolors{2}{gray!25}{white}
+                \begin{tabular}{l | p{16cm} | p{5cm}}
+                    \rowcolor{gray!25}
+                    \talk{2016-10-06}{Alle}{Orga-Treff (Pizzeria Europa)}
+                    \talk{2016-10-13}{}{}
+                    \talk{2016-10-20}{}{}
+                    \talk{2016-10-27}{}{}
+                    \talk{2016-11-03}{}{}
+                    \talk{2016-11-10}{}{}
+                    \talk{2016-11-17}{}{}
+                    \talk{2016-11-24}{}{}
+                    \talk{2016-12-01}{}{}
+                    \talk{2016-12-08}{}{}
+                    \talk{2016-12-15}{}{}
 
-                \vspace{1cm}
-                -
+                    \talk{2016-12-22}{}{}
+                    \talk{2017-01-05}{}{}
 
-                \vspace{1cm}
-                {\fontsize{40}{40} \selectfont \textbf{\thema}}
+                    \talk{2017-01-12}{}{}
+                    \talk{2017-01-19}{}{}
+                    \talk{2017-01-26}{Alle}{Pimp my x86 - Lightning talks}
 
-                \vspace{1cm}
-                \desc
+                \end{tabular}
             \end{Huge}
-
         \end{center}
     \end{mdframed}
 
