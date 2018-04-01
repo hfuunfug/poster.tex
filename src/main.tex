@@ -21,7 +21,10 @@
 \usepackage{DejaVuSans}
 \renewcommand*\familydefault{\sfdefault} %% Only if the base font of the document is to be sans serif
 
-\newcommand{\talk}[3]{#1 & #3 & #2 \\}
+% multiline cells
+\usepackage{makecell}
+
+\newcommand{\talk}[3]{\makecell{#1} & \makecell{#3} & \makecell{#2} \\}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 
 % color
@@ -73,26 +76,18 @@
 
             \begin{Huge}
                 \rowcolors{2}{gray!25}{white}
-                \begin{tabular}{l | p{16cm} | p{5cm}}
+                \begin{tabular}{l | p{18cm} | p{3cm}}
                     \rowcolor{gray!25}
-                    \talk{2016-10-06}{Alle}{Orga-Treff (Pizzeria Europa)}
-                    \talk{2016-10-13}{}{}
-                    \talk{2016-10-20}{}{}
-                    \talk{2016-10-27}{}{}
-                    \talk{2016-11-03}{}{}
-                    \talk{2016-11-10}{}{}
-                    \talk{2016-11-17}{}{}
-                    \talk{2016-11-24}{}{}
-                    \talk{2016-12-01}{}{}
-                    \talk{2016-12-08}{}{}
-                    \talk{2016-12-15}{}{}
-
-                    \talk{2016-12-22}{}{}
-                    \talk{2017-01-05}{}{}
-
-                    \talk{2017-01-12}{}{}
-                    \talk{2017-01-19}{}{}
-                    \talk{2017-01-26}{Alle}{Pimp my x86 - Lightning talks}
+                    \talk{2018-04-06}{Alle}{Orga-Treff II (Pizzeria Europa)}
+                    \talk{2018-04-13}{Alle}{Tools Tools Tools}
+                    \talk{2018-04-20}{Alle}{Linux Installation/Testing Party}
+                    \talk{2018-04-27}{Elias}{Automatisches Deployment \\ von Cisco mit ansible}
+                    \talk{2018-05-03}{Kai}{Overview of Linux distros,\\ desktop environments \& \\window managers}
+                    \talk{2018-05-10}{Alle}{Fahrt zur Gulsachprogrammiernacht \\(https://entropia.de/GPN18)}
+                    \talk{2018-05-17}{Maxim}{file- \& MIME-types}
+                    \talk{2018-06-07}{Kai}{DIY LED Deko}
+                    \talk{2018-06-09}{Alle}{Fahrt zur Tübix (http://www.tuebix.org/)}
+                    \talk{2018-07-05}{Alle}{Pimp my x86 - Lightning talks}
 
                 \end{tabular}
             \end{Huge}
@@ -105,7 +100,7 @@
         \begin{center}
             \begin{huge}
                 http://UnFUG.org \\
-                irc://irc.hackint.org/#unfug
+                irc://irc.hackint.org/\#unfug
             \end{huge}
         \end{center}
     \end{mdframed}
